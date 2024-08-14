@@ -1,0 +1,15 @@
+import math
+
+def get_speed_statistic(test_results):
+    if not test_results:
+        return [0, 0, 0]
+    
+    min_speed = min(test_results)
+    max_speed = max(test_results)
+    avg_speed = math.floor(sum(test_results) / len(test_results))
+    
+    return [min_speed, max_speed, avg_speed]
+
+# Приклад використання:
+test_results = [10, 20, 30, 40, 50]
+print(get_speed_statistic(test_results))
