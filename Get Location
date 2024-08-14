@@ -1,0 +1,14 @@
+def get_location(coordinates, commands):
+    x, y = coordinates  
+
+    for command in commands:
+        if command == "forward":
+            y += 1
+        elif command == "back":
+            y -= 1
+        elif command == "right":
+            x += 1
+        elif command == "left":
+            x -= 1
+
+    return [x, y]
