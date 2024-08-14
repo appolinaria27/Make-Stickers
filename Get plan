@@ -1,0 +1,14 @@
+import math
+
+def get_plan(current_production, months, percent):
+    monthly_goals = []
+    
+    for month in range(months):
+        if month == 0:
+            new_production = current_production * (1 + (percent / 100))
+        else:
+            new_production = monthly_goals[-1] * (1 + (percent / 100))
+        # Округляем вниз и добавляем в список
+        monthly_goals.append(math.floor(new_production))
+    
+    return monthly_goals
